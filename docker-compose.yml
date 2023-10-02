@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  bot:
+    container_name: mixer_telegram_bot
+    stop_signal: SIGINT
+    build:
+      context: .
+    env_file:
+      - ./.env
+    volumes:
+      - .:/home/Telegram_bot
+    command: python3 main.py
